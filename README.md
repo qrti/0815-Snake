@@ -14,5 +14,5 @@ Snake effect, hour, minute and second digits are drawn dot after dot
 
 ----------
 
-[0815 Snake in Pebble Appstore](http://apps.getpebble.com/en_US/application/53c78f1c51bf545f5700011e)  
+[Pebble Appstore - 0815 Snake](http://apps.getpebble.com/en_US/application/53c78f1c51bf545f5700011e)  
 [qrt@qland.de](mailto:qrt@qland.de)
