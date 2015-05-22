@@ -13,5 +13,5 @@ Options
 - three date formats
 
 ----------
-[Pebble Appstore](http://apps.getpebble.com/en_US/application/53c78f1c51bf545f5700011e)  
+[0815 Snake in Pebble Appstore](http://apps.getpebble.com/en_US/application/53c78f1c51bf545f5700011e)  
 [qrt@qland.de](mailto:qrt@qland.de)
