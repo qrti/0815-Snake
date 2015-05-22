@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  </head>
+  
+  <body></body>>
+    <div data-role="page" data-theme="b" id="main">
+      <div data-role="header" data-theme="b" class="jqm-header">
+        <div>
+          <h3>&nbsp&nbsp0815 Snake&nbsp&nbsp<font size="2">Watchface Config</font></h3>
+        </div>
+      </div>
+
+      <div data-role="content">
+        <div data-role="fieldcontain">
+          <label for="sldDispDate">Date:</label>
+          <select name="sldDispDate" id="sldDispDate" data-role="slider">
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select>
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="sldDivide">Divide:</label>
+          <select name="sldDivide" id="sldDivide" data-role="slider">
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select>
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="sldInvert">Invert:</label>
+          <select name="sldInvert" id="sldInvert" data-role="slider">
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select>
+        </div>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <legend>Date Format:</legend>
+            
+            <input type="radio" name="grpDateForm" id="rbtDateForm1" value="0" checked="checked">
+            <label for="rbtDateForm1">DDMMYY</label>
+
+            <input type="radio" name="grpDateForm" id="rbtDateForm2" value="1">
+            <label for="rbtDateForm2">MMDDYY</label>
+
+            <input type="radio" name="grpDateForm" id="rbtDateForm3" value="2">
+            <label for="rbtDateForm3">YYMMDD</label>          
+          </fieldset>
+        </div>
+
+        <div>
+          <h4>Suggestions and Donations <a href="mailto:qrt@qland.de">qrt@qland.de</a></h4>
+          <br>
+        </div>
+        
+        <div class="ui-body ui-body-b">
+          <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button type="submit" data-theme="d" id="btnCancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="b" id="btnSubmit">Submit</button></div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function saveOptions(){
+        var options = {
+          'dispDate': $("#sldDispDate").val(),  
+          'divide': $("#sldDivide").val(),
+          'invert': $("#sldInvert").val(),
+          'dateForm': $('input[name="grpDateForm"]:checked').val()
+        }
+        
+        return options;
+      }
+
+	  function getUrlOptions(){
+        var params = {};
+        var bits = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/g, 
+                                                function (match, key, value){
+                                                    params[key] = value;
+                                                });
+        
+        return params;
+      }
+
+      function setUrlOptions(){
+        var params = getUrlOptions(); 
+        
+        for(key in params){
+          var value = decodeURIComponent(params[key]);  
+            
+          if(key == "0815_KEY_DISPDATE"){
+            $("#sldDispDate").val(value).slider("refresh");
+          }
+          else if(key == "0815_KEY_INVERT"){
+            $("#sldInvert").val(value).slider("refresh");
+          }
+          else if(key == "0815_KEY_DIVIDE"){
+            $("#sldDivide").val(value).slider("refresh");
+          }
+          else if(key == "0815_KEY_DATEFORM"){ 
+            $('input[name="grpDateForm"][value=' + value + ']').attr('checked', 'checked');
+            $('input[name="grpDateForm"]').checkboxradio("refresh");
+          }   
+        }
+      }
+
+      $().ready(function(){
+        setUrlOptions();
+        
+        $("#btnCancel").click(function(){
+          //console.log("Cancel");
+          document.location = "pebblejs://close";
+        });
+
+        $("#btnSubmit").click(function(){
+          //console.log("Submit");
+          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+          document.location = location;
+        });
+      });
+    </script>
+  </body>
+</html>

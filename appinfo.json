@@ -1,0 +1,97 @@
+{
+    "appKeys": {
+        "KEY_DATEFORM": 3,
+        "KEY_DISPDATE": 0,
+        "KEY_DIVIDE": 1,
+        "KEY_INVERT": 2
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "qrt@qland.de",
+    "longName": "0815 Snake",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/datedigit9.png",
+                "name": "DATEDIGIT9",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit8.png",
+                "name": "DATEDIGIT8",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit7.png",
+                "name": "DATEDIGIT7",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit6.png",
+                "name": "DATEDIGIT6",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit5.png",
+                "name": "DATEDIGIT5",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit4.png",
+                "name": "DATEDIGIT4",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit3.png",
+                "name": "DATEDIGIT3",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit2.png",
+                "name": "DATEDIGIT2",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit1.png",
+                "name": "DATEDIGIT1",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/datedigit0.png",
+                "name": "DATEDIGIT0",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/dividerver.png",
+                "name": "DIVIDERVER",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/dividerhor.png",
+                "name": "DIVIDERHOR",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/timedigitdot.png",
+                "name": "TIMEDIGIDOT",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/menu_icon.png",
+                "menuIcon": true,
+                "name": "MENU_ICON",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "2",
+    "shortName": "0815 Snake",
+    "uuid": "5ceaa6cb-6fcd-4e12-960b-b1608b7fcb9c",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
